@@ -4,7 +4,7 @@ First run this command to VS code terminal
 
 ==> npm install gh-pages --save-dev
 
-In package.json file look at the devDependencies gh-pages are added or not.
+In package.json file look at the devDependencies see gh-pages are added or not.
 
 ==> 
 
