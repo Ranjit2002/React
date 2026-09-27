@@ -55,6 +55,25 @@ export default defineConfig({
 });
 
 
+If you are using Next.js 
+
+Open your next.config.ts and paste this 
+
+==>
+
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  output: "export",
+  basePath: "/your-repo-name",
+  images: {
+    unoptimized: true, // Required if you are using the next/image component in a static export
+  },
+};
+
+export default nextConfig;
+
+
 Then push all your files and folder to GitHub.
 
 After pushing all this files to GitHub.
