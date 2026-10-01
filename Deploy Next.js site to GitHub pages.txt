@@ -1,4 +1,4 @@
-Deploy React site to GitHub Pages
+Deploy Next.js site to GitHub pages
 
 First run this command to VS code terminal
 
@@ -27,34 +27,40 @@ Add homepage on your package.json file
 "type": "module",
 "homepage": "https://your-github-username.github.io/your-repo-name",
 
-
 Add predeploy and deploy in your scripts like this
 
 ==> 
 
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d out",
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   }
 
-
-Add base in your vite.config.js file like this
+Open your next.config.ts and paste this 
 
 ==>
 
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  output: "export",
+  basePath: "/your-repo-name",
+  images: {
+    unoptimized: true, // Required if you are using the next/image component in a static export
+  },
+};
+
+export default nextConfig;
 
 
-export default defineConfig({
-  plugins: [tailwindcss(), react()],
-  base: "/your-repo-name/",
-});
+In Public folder create a .nojekyll file 
+
+
+Run this command ==> npm run build
 
 
 Then push all your files and folder to GitHub.
@@ -64,4 +70,3 @@ After pushing all this files to GitHub.
 Go to your repository on GitHub.com and navigate to Settings > Pages.
 Under the "Build and deployment" section, select Deploy from a branch as the source.
 In the branch dropdown menu, select the gh-pages branch, leave the folder as / (root), and click Save.
-
