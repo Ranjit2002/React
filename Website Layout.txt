@@ -1,0 +1,10 @@
+Make a website {website name and description} in {Library/Framework} use the latest version of {library/Framework}. 
+
+Use Tailwind CSS V4 don't use normal CSS.
+
+Add a toggle theme dark and light mode keep the dark theme default.
+
+Add animation, hover-effect, linear-gradient colors and more according to you.
+
+make a back to top button on the bottom right side, I want that when I will start scrolling the page then only show me that button and when I will stop scrolling hide that button with an animation. And again when I will start scrolling show me that button with an animation. In mobile devices show the upward arrow for this button.
+
